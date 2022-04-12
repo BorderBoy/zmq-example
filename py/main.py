@@ -1,18 +1,23 @@
 import time
 import zmq
+import base64
 
 context = zmq.Context()
-socket = context.socket(zmq.REP)
+socket = context.socket(zmq.REQ)
 socket.bind("tcp://127.0.0.1:5555")
 
-while True:
-    # Wait for next request from client
-    message = socket.recv(copy=False)
-    print("Received request: %s" % str(message))
+image = open("image.jpg", 'rb')
+bytes = bytearray(image.read())
+strng = base64.b64encode(bytes)
 
-    #  Do some 'work'
-    time.sleep(1)
+for request in range(1):
+    
+    # print(f"Sending request {strng} ...")
+    socket.send(strng)
 
-    # Send reply back to client
-    socket.send(b"World")
-    print("Sent response")
+    #  Get the reply.
+    message = socket.recv()
+    print(f"Received reply {request} [ {message} ]")
+
+image.close()
+    
