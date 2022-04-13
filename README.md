@@ -5,7 +5,14 @@ Small working example of communication between python and c++ code. The python c
 The python code can be found in `py/`. When the python client is executed it sends the first image, waits for the reply and sends the next one. This is done with all 6 images. Start the OpenFace extractor first, wait until the models are loaded and then start the python client.
 
 ## OpenFace
-The code can be found in `open-face-extractor/`. There also a binary can be found which is built for macOS. To build the code the contents of `open-face-extractor/` must be placed into the `exe/` folder of [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace). To install OpenFace follow the instructions in the [wiki](https://github.com/TadasBaltrusaitis/OpenFace/wiki).
+This has only been tested for macOS.
+
+The code can be found in `open-face-extractor/`. There also a binary can be found which is built for macOS.
+
+To build the code the contents of `open-face-extractor/` must be placed into the `exe/` folder of [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace). Additionally this line must be added to `OpenFace/CMakeLists.txt`:  
+```add_subdirectory(exe/OwnExtractor)```
+
+To build OpenFace follow the instructions in the [wiki](https://github.com/TadasBaltrusaitis/OpenFace/wiki).
 
 When the binary is executed it waits for an image and replies. Then it waits for another image.
 
