@@ -23,7 +23,7 @@ for request in range(6):
 
     data = json.loads(message)
 
-    print(data["presence"]["AU01"])
+    print(data)
 
 image.close()
     
