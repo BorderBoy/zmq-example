@@ -7,7 +7,7 @@ The python code can be found in `py/`. When the python client is executed it sen
 ## OpenFace
 This has only been tested for macOS.
 
-The code can be found in `open-face-extractor/`. To build the code the contents of `open-face-extractor/` must be placed into the `exe/` folder of [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace). Additionally this line must be added to `OpenFace/CMakeLists.txt`:  
+The code can be found in `open-face-extractor/`. To build the code the contents of `open-face-extractor/` must be placed into the `exe/OwnExtractor` folder of [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace). Additionally this line must be added to `OpenFace/CMakeLists.txt`:  
 ```add_subdirectory(exe/OwnExtractor)```
 
 To build OpenFace follow the instructions in the [wiki](https://github.com/TadasBaltrusaitis/OpenFace/wiki).
